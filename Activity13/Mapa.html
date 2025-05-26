@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simpsons Interactivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mapaImg.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Actividad Videos</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="../Index.html" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-house"></i> Volver al inicio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-4 text-center">
+        <h2 class="mb-4">Haz clic sobre un personaje</h2>
+
+        <div class="imagen-container">
+            <!-- Imagen con mapa -->
+            <img src="img/simpsons1600x900.jpg" width="1600" height="900" usemap="#simpsons" class="img-fluid">
+            <map name="simpsons">
+                <area shape="rect" coords="650,100,830,900" href="#" alt="Homero" title="Homero"
+                    onclick="mostrarInfo('homero')">
+                <area shape="rect" coords="300,150,450,640" href="#" alt="Marge" title="Marge"
+                    onclick="mostrarInfo('marge')">
+                <area shape="rect" coords="800,20,1000,150" href="#" alt="Bart" title="Bart"
+                    onclick="mostrarInfo('bart')">
+                <area shape="rect" coords="800,300,1000,500" href="#" alt="Lisa" title="Lisa"
+                    onclick="mostrarInfo('lisa')">
+            </map>
+            <footer class="text-center mt-5 text-muted">
+                <p>Actividad 13 - HTML Mapa de Imagen | Hecho con Bootstrap</p>
+            </footer>
+            <!-- Fondo semitransparente -->
+            <div id="overlay" class="overlay" onclick="cerrarInfo()"></div>
+
+            <!-- Tarjeta flotante -->
+            <div id="info" class="info-card card shadow">
+                <button class="btn-close position-absolute top-0 end-0 m-2" onclick="cerrarInfo()"></button>
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img id="img-personaje" src="" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8 text-start">
+                        <div class="card-body">
+                            <h5 class="card-title" id="nombre-personaje">Nombre</h5>
+                            <p class="card-text" id="desc-personaje">Descripción...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            homero: {
+                nombre: "Homero Simpson",
+                imagen: "img/homero.jpg",
+                descripcion: "Homer Simpson es el padre de la familia y un personaje principal de la serie animada Los Simpson. Es conocido por su torpeza, obesidad, pereza, y su falta de inteligencia, pero también por su amor por su familia, especialmente por Bart. Trabaja como inspector de seguridad en la central nuclear de Springfield"
+            },
+            marge: {
+                nombre: "Marge Simpson",
+                imagen: "img/marge.jpg",
+                descripcion: "Marge Simpson es el personaje de Los Simpson que encarna el rol de madre en la familia, siendo la esposa de Homer y madre de Bart, Lisa y Maggie. Es conocida por su naturaleza cálida, amable y a veces ingenua, así como por su distintivo peinado de colmena azul. Marge se caracteriza por ser hogareña, dedicándose a las tareas domésticas, la crianza de sus hijos y la gestión del hogar"
+            },
+            bart: {
+                nombre: "Bart Simpson",
+                imagen: "img/bart.jpg",
+                descripcion: "Bart Simpson es un personaje de ficción de la serie de televisión Los Simpson. Es el hijo mayor de Homer y Marge Simpson, hermano de Lisa y Maggie, y tiene 10 años de edad. Es conocido por ser travieso, rebelde, y tener un gran sentido del humor"
+            },
+            lisa: {
+                nombre: "Lisa Simpson",
+                imagen: "img/lisa.jpg",
+                descripcion: "Lisa Simpson es un personaje principal de la serie animada Los Simpson, conocida por su inteligencia, sensibilidad y fuerte conciencia moral. Es la hija mediana de Homer y Marge, y la hermana de Bart y Maggie. "
+            }
+        };
+
+        function mostrarInfo(id) {
+            const personaje = data[id];
+            document.getElementById("img-personaje").src = personaje.imagen;
+            document.getElementById("nombre-personaje").textContent = personaje.nombre;
+            document.getElementById("desc-personaje").textContent = personaje.descripcion;
+
+            document.getElementById("info").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function cerrarInfo() {
+            document.getElementById("info").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

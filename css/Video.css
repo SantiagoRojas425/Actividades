@@ -1,0 +1,31 @@
+    body {
+    background-color: #ffffff;
+  }
+  .header {
+    background-color: #e80c04;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  .card {
+    border: none;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .card:hover {
+    transform: scale(1.03);
+  }
+  .card iframe {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .card-text {
+    font-size: 0.95rem;
+  }
