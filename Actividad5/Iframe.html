@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 5 - Iframes con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../Img/favicon-32x32.png" type="image/x-icon">
+    <style>
+        .iframe-container {
+            margin-bottom: 2rem;
+        }
+
+        iframe {
+            border: 2px solid #0d6efd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Actividad Maps</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="../Index.html" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-house"></i> Volver al inicio
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container py-4">
+        <h1 class="text-center mb-5">Actividad 5: Uso de Iframes</h1>
+
+        <!-- Iframe centrado -->
+        <div class="iframe-container text-center">
+            <h4>Este es un marco centrado</h4>
+            <iframe src="https://www.youtube.com/embed/AQbv-onTERY?si=-mZOIUIElxov9Bc_" width="600" height="300"
+                loading="lazy"></iframe>
+        </div>
+
+        <!-- Iframe alineado a la izquierda -->
+        <div class="row iframe-container">
+            <div class="col-md-6">
+                <h5>Este está a la izquierda</h5>
+                <iframe src="https://www.wikipedia.org" width="100%" height="300" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Iframe alineado a la derecha -->
+        <div class="row justify-content-end iframe-container">
+            <div class="col-md-6 text-end">
+                <h5>Y este a la derecha</h5>
+                <iframe src="https://www.wikipedia.org" width="100%" height="300" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5 text-muted">
+        <p>Actividad 6 - HTML Google Maps| Hecho con Bootstrap </p>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2025 Copyright:
+            <a class="text-white" href="#">SantiRojas</a>
+        </div>
+</body>
+
+</html>
